@@ -20,12 +20,13 @@ This Flask application serves as a backend service for a Rails app to process us
 - Flask
 - Requests
 - Better Profanity
+- Ollama (for LLM integration)
 
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/ktamulonis/openbook_service
+   cd openbook_service
    ```
 2. Create a virtual environment and activate it:
    ```bash
@@ -37,10 +38,16 @@ This Flask application serves as a backend service for a Rails app to process us
    pip install -r requirements.txt
    ```
 
-### Environment Variables
-Create a `.env` file or export the following environment variables:
-- **OLLAMA_URL**: The URL of the Ollama API (default: `http://localhost:11434/api/generate`).
-- **OPEN_LIBRARY_URL**: The URL of the Open Library API (default: `https://openlibrary.org/search.json`).
+4. Install Ollama:
+   - Follow instructions from the [Ollama Installation Guide](https://ollama.ai/).
+   - Ensure you have access to the `llama3.2` model:
+     ```bash
+     ollama pull llama3.2
+     ```
+   - Start the Ollama service locally:
+     ```bash
+     ollama serve
+     ```
 
 ---
 
@@ -122,10 +129,18 @@ Example Error:
 
 ---
 
+## Visual Workflow Representation
+Below is a visual representation of the workflow for this application.
+
+![Application Workflow](diagram.png)
+
+---
+
 ## Dependencies
 - **Flask**: Web framework for handling HTTP requests.
 - **Requests**: HTTP library for API calls.
 - **Better Profanity**: Library for filtering inappropriate language.
+- **Ollama**: LLM service for query generation and response refinement.
 
 ---
 
@@ -151,8 +166,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Contact
 For questions or suggestions, feel free to open an issue or reach out to the maintainer:
-- **Email**: your-email@example.com
-- **GitHub**: [your-username](https://github.com/your-username)
+- **Email**: hackliteracy@gmail.com
 
 ---
 
