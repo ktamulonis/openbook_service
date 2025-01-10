@@ -60,9 +60,10 @@ Handles book search requests.
 #### Request Body:
 ```json
 {
-  "query": "string"  // User's search query
+  "query": "string"
 }
 ```
+- `query`: User's search query (must be a non-empty string).
 
 #### Response:
 - **Success**: A streamed plain-text response with an engaging narrative and book details.
@@ -73,6 +74,7 @@ Example Error:
 {
   "error": "Invalid input. 'query' must be a non-empty string."
 }
+```
 
 ---
 
@@ -110,7 +112,7 @@ Example Error:
    ```
 4. Open Library API fetches book data based on the query.
 5. Ollama refines the response into a narrative, e.g.,:
-   ```
+   ```text
    Here's what we found:
    • 'Harry Potter and the Philosopher's Stone' by J.K. Rowling
    • 'Harry Potter and the Chamber of Secrets' by J.K. Rowling
@@ -161,4 +163,3 @@ For questions or suggestions, feel free to open an issue or reach out to the mai
 - [Better Profanity](https://pypi.org/project/better-profanity/)
 
 
-# openbook_service
