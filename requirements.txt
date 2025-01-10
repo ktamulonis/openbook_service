@@ -1,0 +1,5 @@
+flask
+requests
+better_profanity
+pytest
+
